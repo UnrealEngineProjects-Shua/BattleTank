@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-//#include "BattleTank.h"
+#include "BattleTank.h"
 #include "Tank.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"
@@ -22,6 +22,8 @@ protected:
 
 public:
 	ATank* GetControlledTank() const;
+
+	void Tick(float DeltaTime) override;
 	
 	
 	
