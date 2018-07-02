@@ -1,21 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "BattleTank.h"
 #include "TankPlayerController.h"
 
+void ATankPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	UE_LOG(LogTemp, Warning, TEXT("Player Begin Play"))
+}
 
 ATank* ATankPlayerController::GetControlledTank() const
 {
-	Cast<ATank>(GetPawn());
 
-	UE_LOG(LogTemp, Warning, TEXT("I am working"))
-
-
-	return nullptr;
+	return Cast<ATank>(GetPawn());
 }
-
-//void ATankPlayerController::BeginPlay()
-//{
-//	Super BeginPlay();
-//
-//	UE_LOG(LogTemp, Warning, TEXT("Player Begin Play"))
-//}
