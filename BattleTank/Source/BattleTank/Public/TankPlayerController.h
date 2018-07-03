@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BattleTank.h"
 #include "Tank.h"
+//#include "Engine/EngineTypes.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"
 
@@ -31,10 +31,17 @@ private:
 
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector & HitLocation) const;
+
 	UPROPERTY(EditAnywhere)
 	float CrossHairXLocation = .5;
 
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = .3333;
+	
+	// 10km == 10000m == 1000000cm
+	// unreal deals in cm
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000; 
 	
 };
