@@ -36,7 +36,6 @@ void ATankAIController::Tick(float DeltaTime)
 
 ATank* ATankAIController::GetControlledTank() const
 {
-
 	return Cast<ATank>(GetPawn());
 }
 
