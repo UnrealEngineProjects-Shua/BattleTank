@@ -26,6 +26,9 @@ public:
 	UFUNCTION(BluePrintCallable, Category = Setup)
 	void SetTurretRefference(UTankTurret* TurretToSet);
 
+	UFUNCTION(BluePrintCallable, Category = Firing)
+		void Fire();
+
 protected:
 	UTankAimingComponent * TankAimingComponent = nullptr;
 
