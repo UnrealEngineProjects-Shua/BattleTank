@@ -20,13 +20,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:
-	ATank* GetControlledTank() const;
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+		ATank* GetControlledTank() const;
 
+public:
 	void Tick(float DeltaTime) override;
 	
 private:
-
 	void AimAtCrosshair();
 
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
