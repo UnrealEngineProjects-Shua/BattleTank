@@ -31,6 +31,9 @@ public:
 		void IntendTurnRight(float Throw);
 
 
+	virtual void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
+
+
 private:
 
 	UTankTracks* LeftTrack = nullptr;
