@@ -22,13 +22,13 @@ class BATTLETANK_API ATank : public APawn
 public:
 	void AimAt(FVector HitLocation);
 
-	UFUNCTION(BluePrintCallable, Category = Setup)
+	UFUNCTION(BluePrintCallable, Category = "Setup")
 	void SetBarrelRefference(UTankBarrel* BarrelToSet);
 
-	UFUNCTION(BluePrintCallable, Category = Setup)
+	UFUNCTION(BluePrintCallable, Category = "Setup")
 	void SetTurretRefference(UTankTurret* TurretToSet);
 
-	UFUNCTION(BluePrintCallable, Category = Firing)
+	UFUNCTION(BluePrintCallable, Category = "Firing")
 		void Fire();
 
 protected:
@@ -50,16 +50,16 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	// firing speed of 1000 m/s
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditAnywhere, Category = "Firing")
 		float LaunchSpeed = 100000;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditAnywhere, Category = "Setup")
 		TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	// Local barrel reference for spawning projectile
 	UTankBarrel* Barrel = nullptr;
 
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditAnywhere, Category = "Firing")
 		float ReloadTimeInSeconds = 3;
 
 	double LastFireTime = 0;
