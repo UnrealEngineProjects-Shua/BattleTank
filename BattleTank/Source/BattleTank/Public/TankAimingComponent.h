@@ -42,7 +42,8 @@ public:
 		void Initialize(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
 
 	// TODO set turrent refference
-	void AimAt(FVector HitLocation, float LaunchSpeed);
+	void AimAt(FVector HitLocation);
+
 
 private:
 	// Sets default values for this component's properties
@@ -50,6 +51,10 @@ private:
 
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
+
+	// firing speed of 1000 m/s
+	UPROPERTY(EditAnywhere, Category = "Firing")
+	float LaunchSpeed = 100000;
 
 	void MoveBarrelTowards(FVector AimDirection);
 
