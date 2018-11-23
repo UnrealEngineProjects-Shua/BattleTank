@@ -20,11 +20,17 @@ class BATTLETANK_API ATankAIController : public AAIController
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, Category = "Setup")  // Consider EditDefaultsOnly
+	bool FiringEnabled = true;
+
+	UPROPERTY(EditAnywhere, Category = "Setup")  // Consider EditDefaultsOnly
+	float AcceptanceRadius = 3000;
+
 	
 private:
 
 	virtual void Tick(float DeltaTime) override;
 
-	float AcceptanceRadius = 10;
 
 };

@@ -2,6 +2,7 @@
 
 #include "TankAIController.h"
 #include "TankAimingComponent.h"
+#include "Engine/World.h"
 
 
 void ATankAIController::BeginPlay()
@@ -20,7 +21,7 @@ void ATankAIController::Tick(float DeltaTime)
 
 	if (!ensure(PlayerTank && ControlledTank)) { return; }
 
-	// TODO Move towards the player
+	//Move towards the player
 	MoveToActor(PlayerTank, AcceptanceRadius);
 
 	//Aim towards the player
@@ -29,6 +30,7 @@ void ATankAIController::Tick(float DeltaTime)
 	AimingComponent->AimAt(PlayerTank->GetActorLocation());
 
 	//Fire if ready
+	if (AimingComponent->GetFiringState() == EFiringState::Locked && FiringEnabled)
 	AimingComponent->Fire();
 }
 
