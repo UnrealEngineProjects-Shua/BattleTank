@@ -63,7 +63,7 @@ private:
 
 	// firing speed of 1000 m/s
 	UPROPERTY(EditAnywhere, Category = "Firing")
-	float LaunchSpeed = 20000;
+	float LaunchSpeed = 40000;
 
 
 	UPROPERTY(EditAnywhere, Category = "Setup")
