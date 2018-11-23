@@ -16,7 +16,6 @@ void ATankPlayerController::BeginPlay()
 
 void ATankPlayerController::AimAtCrosshair()
 {
-	if (!GetPawn()) { return; } // if not currently possessing
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
 	if (!ensure(AimingComponent)) { return; }
 

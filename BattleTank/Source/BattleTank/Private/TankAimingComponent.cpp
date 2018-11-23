@@ -84,8 +84,6 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 		MoveBarrelTowards(AimDirection);
 		//auto Time = GetWorld()->GetTimeSeconds();
 	}
-	else
-	FiringState = EFiringState::Reloading;
 }
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
@@ -111,6 +109,8 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 void UTankAimingComponent::Fire()
 {
+
+
 	if (FiringState != EFiringState::Reloading)
 	{
 		// Spawn projectile at barrel location
