@@ -68,17 +68,17 @@ private:
 	UTankTurret* Turret = nullptr;
 
 	UPROPERTY(EditAnywhere, Category = "Setup")
-	TSubclassOf<AProjectile> ProjectileBlueprint;
+	TSubclassOf<AProjectile> ProjectileBlueprint = nullptr;
 
 	// firing speed of 1000 m/s
 	UPROPERTY(EditAnywhere, Category = "Firing")
-	float LaunchSpeed = 40000;
+	float LaunchSpeed = 10000;
 
 	UPROPERTY(EditAnywhere, Category = "Firing")
-	float ReloadTimeInSeconds = 3;
+	float ReloadTimeInSeconds = 1;
 
 	UPROPERTY(EditAnywhere, Category = "Firing")
-	int32 RoundsLeft = 3;
+	int32 RoundsLeft = 30;
 
 	double LastFireTime = 0;
 
