@@ -54,6 +54,8 @@ public:
 	UFUNCTION(BluePrintCallable, Category = "Firing")
 	int32 GetRoundsLeft() const;
 
+	void SetRoundsLeft(int32 rounds);
+
 private:
 	// Sets default values for this component's properties
 	UTankAimingComponent();

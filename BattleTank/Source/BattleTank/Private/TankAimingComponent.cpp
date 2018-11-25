@@ -72,6 +72,11 @@ int32 UTankAimingComponent::GetRoundsLeft() const
 	return RoundsLeft;
 }
 
+void UTankAimingComponent::SetRoundsLeft(int32 rounds)
+{
+	RoundsLeft = rounds;
+}
+
 void UTankAimingComponent::AimAt(FVector HitLocation)
 {
 	if (!ensure(Barrel)) { return; }
