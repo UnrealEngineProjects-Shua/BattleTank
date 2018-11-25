@@ -23,6 +23,11 @@ protected:
 private:
 	virtual void BeginPlay() override;
 
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
 	virtual void Tick(float DeltaTime) override;
 
 	// Start the tank moving the barrel so that a shot would hit where
@@ -33,14 +38,15 @@ private:
 	bool GetSightRayHitLocation(FVector& HitLocation) const;
 
 	UPROPERTY(EditDefaultsOnly)
-		float CrosshairXLocation = 0.5;
+	float CrosshairXLocation = 0.5;
 
 	UPROPERTY(EditDefaultsOnly)
-		float CrosshairYLocation = 0.3333;
+	float CrosshairYLocation = 0.3333;
 
 	UPROPERTY(EditDefaultsOnly)
-		float LineTraceRange = 1000000;
+	float LineTraceRange = 1000000;
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };
